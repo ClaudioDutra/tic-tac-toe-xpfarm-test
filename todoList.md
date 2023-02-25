@@ -1,0 +1,23 @@
+## Development Todo
+
+- [ ] **Board game class.**
+  - [ ] Render the board.
+  - [ ] Update the board state.
+  - [ ] Look for winners by checking the board state.
+- [ ] **Player.**
+  - [ ] Set names and selected marks.
+  - [ ] Make a move.
+    - [ ] _Should receive the board and the function for the move._
+- [ ] **DummyBot.**
+  - [ ] Extends the Player.
+  - [ ] Implements the logic for position selection.
+- [ ] **RealPlayer.**
+  - [ ] Extends the Player.
+  - [ ] Get move from input.
+- [ ] **Game.**
+  - [ ] Setup the players (if it is a bot or real player).
+  - [ ] setup the board.
+  - [ ] Get each move.
+    - [ ] _Check if someone wins in that move._
+    - [ ] _Inform winner or Tie._
+  - [ ] Ask if the game should start again.
