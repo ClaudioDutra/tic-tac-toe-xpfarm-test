@@ -41,6 +41,10 @@ ${drawLine}\n
 ${formmatedState[6]}|${formmatedState[7]}|${formmatedState[8]}\n
 `);
   }
+
+  checkResults() {
+    return false;
+  }
 }
 
 module.exports = Board;

@@ -2,7 +2,7 @@
 
 - [ ] **Board game class.**
   - [X] Get current state.
-  - [ ] Render the board.
+  - [X] Render the board.
   - [X] Update the board state.
   - [ ] Look for winners by checking the board state.
 - [ ] **Player.**
