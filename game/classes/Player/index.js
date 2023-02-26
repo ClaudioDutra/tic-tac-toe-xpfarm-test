@@ -1,6 +1,7 @@
 class Player {
-  constructor(name = '') {
+  constructor(name = '', selectPosition = () => { }) {
     this.setName = name;
+    this.setSelectPosition = selectPosition;
   }
 
   set setName(name) {
@@ -10,8 +11,15 @@ class Player {
     this.name = name;
   }
 
-  set makeMove(value) {
+  set setSelectPosition(func) {
+    this.selectPosition = (...params) => {
+      const position = func(...params);
+      if (position < 0 || position > 8) {
+        throw new Error('The position must be between 0 and 8');
+      }
 
+      return position;
+    };
   }
 }
 

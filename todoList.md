@@ -7,7 +7,7 @@
   - [X] Look for winners by checking the board state.
 - [ ] **Player.**
   - [X] Set name.
-  - [ ] Set make a move.
+  - [X] Set make a move.
 - [ ] **DummyBot.**
   - [ ] Extends the Player.
   - [ ] Implements the logic for position selection.
