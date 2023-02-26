@@ -49,4 +49,31 @@ describe('Board Class', () => {
       expect(state).toStrictEqual([1, null, null, null, null, null, null, null, null]);
     });
   });
+  describe('Render Method', () => {
+    test('should draw an empty board', () => {
+      const board = new Board();
+      const log = jest.spyOn(console, 'log');
+      board.render();
+      expect(log).toHaveBeenCalledTimes(1);
+      expect(log).toHaveBeenCalledWith(`
+   |   |
+___________
+   |   |
+___________
+   |   |   `);
+    });
+    test('should draw the board with updated state', () => {
+      const board = new Board();
+      board.setState = [null, null, null, null, null, null, null, null, 1];
+      const log = jest.spyOn(console, 'log');
+      board.render();
+      expect(log).toHaveBeenCalledTimes(1);
+      expect(log).toHaveBeenCalledWith(`
+   |   |
+___________
+   |   |
+___________
+   |   | X `);
+    });
+  });
 });

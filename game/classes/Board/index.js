@@ -20,6 +20,10 @@ class Board {
   get state() {
     return this.states;
   }
+
+  render() {
+    return false;
+  }
 }
 
 module.exports = Board;
