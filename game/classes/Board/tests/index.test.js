@@ -40,7 +40,7 @@ describe('Board Class', () => {
     test('should return default state when no state changes', () => {
       const board = new Board();
       const { state } = board;
-      expect(state).toStrictEqual([[null, null, null, null, null, null, null, null, null]]);
+      expect(state).toStrictEqual([null, null, null, null, null, null, null, null, null]);
     });
     test('should return default state when no state changes', () => {
       const board = new Board();

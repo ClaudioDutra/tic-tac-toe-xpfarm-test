@@ -1,6 +1,6 @@
 class Board {
-  construtor() {
-    this.state = [null, null, null, null, null, null, null, null, null];
+  constructor() {
+    this.states = [null, null, null, null, null, null, null, null, null];
   }
 
   set setState(state) {
@@ -14,7 +14,11 @@ class Board {
       throw new Error('The state only accept the values null, 1 and 2');
     }
 
-    this.state = state;
+    this.states = state;
+  }
+
+  get state() {
+    return this.states;
   }
 }
 
