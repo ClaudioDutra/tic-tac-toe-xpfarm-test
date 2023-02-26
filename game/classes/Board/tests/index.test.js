@@ -1,7 +1,7 @@
 const Board = require('..');
 
 describe('Board Class', () => {
-  test.each(['render', 'setState', 'checkResults'])(
+  test.each(['render', 'setState', 'state', 'checkResults'])(
     'should class have the property (%s)',
     (input) => {
       const board = new Board();
@@ -34,6 +34,19 @@ describe('Board Class', () => {
         board.setState = [null, 1, 2, 2, 1, null, null, null, 1];
         expect(board.state).toStrictEqual([null, 1, 2, 2, 1, null, null, null, 1]);
       }).not.toThrow();
+    });
+  });
+  describe('state get method', () => {
+    test('should return default state when no state changes', () => {
+      const board = new Board();
+      const { state } = board;
+      expect(state).toStrictEqual([[null, null, null, null, null, null, null, null, null]]);
+    });
+    test('should return default state when no state changes', () => {
+      const board = new Board();
+      board.setState = [1, null, null, null, null, null, null, null, null];
+      const { state } = board;
+      expect(state).toStrictEqual([1, null, null, null, null, null, null, null, null]);
     });
   });
 });

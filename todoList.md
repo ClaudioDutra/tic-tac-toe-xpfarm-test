@@ -3,7 +3,7 @@
 - [ ] **Board game class.**
   - [ ] Get current state.
   - [ ] Render the board.
-  - [ ] Update the board state.
+  - [X] Update the board state.
   - [ ] Look for winners by checking the board state.
 - [ ] **Player.**
   - [ ] Set names and selected marks.
