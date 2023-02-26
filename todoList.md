@@ -16,7 +16,7 @@
     - [ ] _Should receive the board and the function for the move._
 
 - [ ] **RealPlayer.**
-  - [ ] Extends the Player.
+  - [X] Extends the Player.
   - [ ] Get move from input.
   
 - [ ] **Game.**
