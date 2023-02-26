@@ -5,9 +5,11 @@
   - [X] Render the board.
   - [X] Update the board state.
   - [X] Look for winners by checking the board state.
-- [ ] **Player.**
+  
+- [X] **Player.**
   - [X] Set name.
   - [X] Set make a move.
+
 - [ ] **DummyBot.**
   - [ ] Extends the Player.
   - [ ] Implements the logic for position selection.
@@ -16,6 +18,7 @@
 - [ ] **RealPlayer.**
   - [ ] Extends the Player.
   - [ ] Get move from input.
+  
 - [ ] **Game.**
   - [ ] Setup the players (if it is a bot or real player).
   - [ ] setup the board.
