@@ -1,7 +1,20 @@
+const { statusValues } = require('./constant');
+
 class Board {
   constructor() {
     this.states = [null, null, null, null, null, null, null, null, null];
   }
+
+  static winningPositions = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6],
+  ];
 
   set setState(state) {
     if (!Array.isArray(state)) {
@@ -43,7 +56,25 @@ ${formmatedState[6]}|${formmatedState[7]}|${formmatedState[8]}\n
   }
 
   checkResults() {
-    return false;
+    const { states } = this;
+    const winnerPosition = Board.winningPositions.find(
+      (position) => states[position[0]] === states[position[1]]
+                    && states[position[1]] === states[position[2]],
+    );
+
+    if (!winnerPosition && states.some((value) => value === null) || states.every((value) => value === null)) {
+      return statusValues.nextMove;
+    }
+
+    if (!winnerPosition) {
+      return statusValues.tie;
+    }
+
+    if (states[winnerPosition[0]] === 1) {
+      return statusValues.player1;
+    }
+
+    return statusValues.player2;
   }
 }
 

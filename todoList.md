@@ -1,10 +1,10 @@
 ## Development Todo
 
-- [ ] **Board game class.**
+- [X] **Board game class.**
   - [X] Get current state.
   - [X] Render the board.
   - [X] Update the board state.
-  - [ ] Look for winners by checking the board state.
+  - [X] Look for winners by checking the board state.
 - [ ] **Player.**
   - [ ] Set names and selected marks.
   - [ ] Make a move.

@@ -1,4 +1,5 @@
 const Board = require('..');
+const { statusValues } = require('../constant');
 
 describe('Board Class', () => {
   test.each(['render', 'setState', 'state', 'checkResults'])(
@@ -82,31 +83,31 @@ describe('Board Class', () => {
     test('should return "next move" when no state changed', () => {
       const board = new Board();
       const result = board.checkResults();
-      expect(result).toStrictEqual('next move');
+      expect(result).toStrictEqual(statusValues.nextMove);
     });
     test('should return "next move" when there is null in state list and there is no winner', () => {
       const board = new Board();
       board.setState = [1, 2, 1, 2, 2, 1, 1, null, 2];
       const result = board.checkResults();
-      expect(result).toStrictEqual('next move');
+      expect(result).toStrictEqual(statusValues.nextMove);
     });
     test('should return "P1" when player 1 wins', () => {
       const board = new Board();
       board.setState = [1, 1, 1, 2, 2, 1, 1, null, 2];
       const result = board.checkResults();
-      expect(result).toStrictEqual('P1');
+      expect(result).toStrictEqual(statusValues.player1);
     });
     test('should return "P2" when player 2 wins', () => {
       const board = new Board();
       board.setState = [1, 2, 1, 2, 2, 1, null, 2, 2];
       const result = board.checkResults();
-      expect(result).toStrictEqual('P2');
+      expect(result).toStrictEqual(statusValues.player2);
     });
     test('should return "Tie" when no one wins and there is no position left', () => {
       const board = new Board();
       board.setState = [1, 2, 1, 2, 2, 1, 1, 1, 2];
       const result = board.checkResults();
-      expect(result).toStrictEqual('Tie');
+      expect(result).toStrictEqual(statusValues.tie);
     });
   });
 });
