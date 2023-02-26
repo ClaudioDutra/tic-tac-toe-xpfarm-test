@@ -32,7 +32,7 @@ describe('Board Class', () => {
       const board = new Board();
       expect(() => {
         board.setState = [null, 1, 2, 2, 1, null, null, null, 1];
-        expect(board.state).toBe([null, 1, 2, 2, 1, null, null, null, 1]);
+        expect(board.state).toStrictEqual([null, 1, 2, 2, 1, null, null, null, 1]);
       }).not.toThrow();
     });
   });
