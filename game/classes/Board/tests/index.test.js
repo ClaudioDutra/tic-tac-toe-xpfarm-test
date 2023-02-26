@@ -56,24 +56,26 @@ describe('Board Class', () => {
       board.render();
       expect(log).toHaveBeenCalledTimes(1);
       expect(log).toHaveBeenCalledWith(`
-   |   |
-___________
-   |   |
-___________
-   |   |   `);
+   |   |   \n
+-----------\n
+   |   |   \n
+-----------\n
+   |   |   \n
+`);
     });
     test('should draw the board with updated state', () => {
       const board = new Board();
-      board.setState = [null, null, null, null, null, null, null, null, 1];
+      board.setState = [2, null, null, null, null, null, null, null, 1];
       const log = jest.spyOn(console, 'log');
       board.render();
       expect(log).toHaveBeenCalledTimes(1);
       expect(log).toHaveBeenCalledWith(`
-   |   |
-___________
-   |   |
-___________
-   |   | X `);
+ O |   |   \n
+-----------\n
+   |   |   \n
+-----------\n
+   |   | X \n
+`);
     });
   });
 });

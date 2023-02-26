@@ -22,7 +22,24 @@ class Board {
   }
 
   render() {
-    return false;
+    const formmatedState = this.states.map((state) => {
+      switch (state) {
+        case 1:
+          return ' X ';
+        case 2:
+          return ' O ';
+        default:
+          return '   ';
+      }
+    });
+    const drawLine = '-----------';
+    console.log(`
+${formmatedState[0]}|${formmatedState[1]}|${formmatedState[2]}\n
+${drawLine}\n
+${formmatedState[3]}|${formmatedState[4]}|${formmatedState[5]}\n
+${drawLine}\n
+${formmatedState[6]}|${formmatedState[7]}|${formmatedState[8]}\n
+`);
   }
 }
 
