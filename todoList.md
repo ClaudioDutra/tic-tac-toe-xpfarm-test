@@ -6,13 +6,12 @@
   - [X] Update the board state.
   - [X] Look for winners by checking the board state.
 - [ ] **Player.**
-  - [ ] Set name.
-  - [ ] Get Name.
+  - [X] Set name.
   - [ ] Set make a move.
 - [ ] **DummyBot.**
   - [ ] Extends the Player.
   - [ ] Implements the logic for position selection.
-    - [ ] _Should receive the board for the move._
+    - [ ] _Should receive the board and the function for the move._
 
 - [ ] **RealPlayer.**
   - [ ] Extends the Player.

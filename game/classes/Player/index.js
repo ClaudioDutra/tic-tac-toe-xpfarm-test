@@ -1,13 +1,13 @@
 class Player {
-  constructor() {
+  constructor(name = '') {
+    this.setName = name;
   }
 
-  set name(value) {
-
-  }
-
-  get name() {
-
+  set setName(name) {
+    if (typeof name !== 'string') {
+      throw new Error('Name must be a string.');
+    }
+    this.name = name;
   }
 
   set makeMove(value) {
