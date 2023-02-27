@@ -1,6 +1,6 @@
-const { statusValues } = require('./constant');
+import { statusValues } from './constant':
 
-class Board {
+export default class Board {
   constructor() {
     this.states = [null, null, null, null, null, null, null, null, null];
   }
@@ -77,5 +77,3 @@ ${formmatedState[6]}|${formmatedState[7]}|${formmatedState[8]}\n
     return statusValues.player2;
   }
 }
-
-module.exports = Board;

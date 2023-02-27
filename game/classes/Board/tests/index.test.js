@@ -1,5 +1,5 @@
-const Board = require('..');
-const { statusValues } = require('../constant');
+import Board from '..';
+import { statusValues } from '../constant';
 
 describe('Board Class', () => {
   test.each(['render', 'setState', 'state', 'checkResults'])(
