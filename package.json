@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "type": "module",
   "scripts": {
     "test": "jest"
   },
@@ -12,5 +13,10 @@
     "eslint-plugin-import": "^2.25.2",
     "jest": "^29.4.3",
     "prettier": "2.8.4"
+  },
+  "dependencies": {
+    "esm": "^3.2.25",
+    "index.js": "^0.0.3",
+    "inquirer": "^9.1.4"
   }
 }
