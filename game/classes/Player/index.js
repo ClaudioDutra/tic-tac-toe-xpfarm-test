@@ -1,4 +1,4 @@
-class Player {
+export default class Player {
   constructor(name = '', selectPosition = () => { }) {
     this.setName = name;
     this.setSelectPosition = selectPosition;
@@ -22,5 +22,3 @@ class Player {
     };
   }
 }
-
-module.exports = Player;

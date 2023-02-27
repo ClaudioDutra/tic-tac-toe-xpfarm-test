@@ -1,4 +1,4 @@
-const Player = require('..');
+import Player from '..';
 
 describe('Player Class', () => {
   describe('Name property', () => {
