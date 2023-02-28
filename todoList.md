@@ -15,9 +15,9 @@
   - [ ] Implements the logic for position selection.
     - [ ] _Should receive the board and the function for the move._
 
-- [ ] **RealPlayer.**
+- [X] **RealPlayer.**
   - [X] Extends the Player.
-  - [ ] Get move from input.
+  - [X] Get move from input.
   
 - [ ] **Game.**
   - [ ] Setup the players (if it is a bot or real player).
