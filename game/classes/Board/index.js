@@ -1,4 +1,4 @@
-import { statusValues } from './constant':
+import { statusValues } from './constant';
 
 export default class Board {
   constructor() {

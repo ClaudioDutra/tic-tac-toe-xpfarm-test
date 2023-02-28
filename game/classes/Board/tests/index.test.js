@@ -1,3 +1,4 @@
+import {jest} from '@jest/globals';
 import Board from '..';
 import { statusValues } from '../constant';
 

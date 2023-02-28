@@ -1,9 +1,7 @@
-const Player = require('../Player');
+import Player from '../Player';
 
-class RealPlayer extends Player {
+export default class RealPlayer extends Player {
   static movement() {
 
   }
 }
-
-module.exports = RealPlayer;

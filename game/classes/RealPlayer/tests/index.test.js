@@ -1,4 +1,4 @@
-const RealPlayer = require('..');
+import RealPlayer from '..';
 
 describe('RealPlayer Class', () => {
   test('should have Player properties', () => {
