@@ -10,10 +10,10 @@
   - [X] Set name.
   - [X] Set make a move.
 
-- [ ] **DummyBot.**
-  - [ ] Extends the Player.
-  - [ ] Implements the logic for position selection.
-    - [ ] _Should receive the board and the function for the move._
+- [X] **DummyBot.**
+  - [X] Extends the Player.
+  - [X] Implements the logic for position selection.
+    - [X] _Should receive the board and the function for the move._
 
 - [X] **RealPlayer.**
   - [X] Extends the Player.

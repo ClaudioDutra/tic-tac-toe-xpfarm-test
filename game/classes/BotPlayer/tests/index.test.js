@@ -24,7 +24,12 @@ describe('BotPlayer Class', () => {
     test('should select the last position', () => {
       const statesMock = [1, 1, 2, 1, 2, 1, 2, null, 1];
       const position = BotPlayer.movement(statesMock)
-      expect(position).toBeEqual(7);
+      expect(position).toBe(7);
+    });
+    test('should show message when there is no option available', () => {
+      const consoleSpy = jest.spyOn(console, 'log');
+      BotPlayer.movement([1, 1, 2, 2, 1, 2, 1, 2, 1]);
+      expect(consoleSpy).toHaveBeenCalledWith('There is no option available');
     });
   });
 });
