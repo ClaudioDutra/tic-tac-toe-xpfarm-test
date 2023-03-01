@@ -2,9 +2,6 @@ import { jest } from '@jest/globals';
 import RealPlayer from '..';
 import inquirer from 'inquirer';
 
-
-jest.mock('inquirer');
-
 describe('RealPlayer Class', () => {
   test('should have Player properties', () => {
     const realPlayer = new RealPlayer();
@@ -13,9 +10,9 @@ describe('RealPlayer Class', () => {
     expect(realPlayer).toHaveProperty('selectPosition');
   });
   describe('Static movement Method', () => {
-    test('should show all options whe state list is not provided', () => {
-      const inquirerMock = jest.spyOn(inquirer, 'prompt');
-      RealPlayer.movement();
+    test('should show all options whe state list is not provided', async () => {
+      const inquirerMock = jest.spyOn(inquirer, 'prompt').mockResolvedValueOnce(0);
+      await RealPlayer.movement();
       expect(inquirerMock).toHaveBeenCalledWith(expect.objectContaining({
         type: 'list',
         choices: expect.arrayContaining([
@@ -31,9 +28,9 @@ describe('RealPlayer Class', () => {
         ])
       }));
     });
-    test('should show available positions based on state', () => {
-      const inquirerMock = jest.spyOn(inquirer, 'prompt');
-      RealPlayer.movement([null, 1, 2, 2, 1, null, null, null, 1]);
+    test('should show available positions based on state', async () => {
+      const inquirerMock = jest.spyOn(inquirer, 'prompt').mockResolvedValueOnce(0);
+      await RealPlayer.movement([null, 1, 2, 2, 1, null, null, null, 1]);
       expect(inquirerMock).toHaveBeenCalledWith(expect.objectContaining({
         type: 'list',
         choices: expect.arrayContaining([
@@ -44,14 +41,14 @@ describe('RealPlayer Class', () => {
         ])
       }));
     });
-    test('should inform no options when no null state available', () => {
+    test('should inform no options when no null state available', async () => {
       const consoleSpy = jest.spyOn(console, 'log');
-      RealPlayer.movement([1, 1, 2, 2, 1, 2, 1, 2, 1]);
+      await RealPlayer.movement([1, 1, 2, 2, 1, 2, 1, 2, 1]);
       expect(consoleSpy).toHaveBeenCalledWith('There is no option available');
     });
 
-    test('should return inquire value', () => {
-      const inquirerMock = jest.spyOn(inquirer, 'prompt').mockReturnValue({playerMove: 0});
+    test('should return inquire value', async () => {
+      jest.spyOn(inquirer, 'prompt').mockReturnValue({playerMove: 0});
       expect(RealPlayer.movement([null, 1, 2, 2, 1, null, null, null, 1])).resolves.toBe(0);
     });
   });
