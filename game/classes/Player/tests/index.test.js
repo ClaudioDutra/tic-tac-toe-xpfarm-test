@@ -1,5 +1,5 @@
-import {jest} from '@jest/globals';
-import Player from '..';
+
+const Player = require('..');
 
 describe('Player Class', () => {
   describe('Name property', () => {

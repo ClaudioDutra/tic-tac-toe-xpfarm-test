@@ -1,5 +1,5 @@
-import inquirer from 'inquirer';
-import Player from '../Player';
+const inquirer = require('inquirer');
+const Player = require('../Player');
 
 const referenceChoices = [
   {
@@ -39,7 +39,7 @@ const referenceChoices = [
     value: 8
   },
 ]
-export default class RealPlayer extends Player {
+class RealPlayer extends Player {
   constructor(...params) {
     super(...params);
     this.setSelectPosition = RealPlayer.movement;
@@ -72,3 +72,5 @@ export default class RealPlayer extends Player {
     return answer.playerMove;
   }
 }
+
+module.exports = RealPlayer

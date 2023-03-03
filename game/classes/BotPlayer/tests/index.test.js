@@ -1,5 +1,5 @@
-import { jest } from '@jest/globals';
-import BotPlayer from '..';
+
+const BotPlayer = require('..');
 
 describe('BotPlayer Class', () => {
   test('should have Player properties', () => {

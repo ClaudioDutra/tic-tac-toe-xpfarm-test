@@ -1,6 +1,6 @@
-import {jest} from '@jest/globals';
-import Board from '..';
-import { statusValues } from '../constant';
+
+const Board = require('..');
+const { statusValues } = require('../constant');
 
 describe('Board Class', () => {
   test.each(['render', 'setState', 'state', 'checkResults'])(

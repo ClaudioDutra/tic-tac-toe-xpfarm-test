@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
-  "type": "module",
   "scripts": {
-    "test": "yarn node --experimental-vm-modules $(yarn bin jest)"
+    "test": "yarn node --experimental-vm-modules $(yarn bin jest)",
+    "start": "node -r esm game/index.js"
   },
   "devDependencies": {
     "eslint": "^8.35.0",
@@ -16,6 +16,6 @@
   },
   "dependencies": {
     "esm": "^3.2.25",
-    "inquirer": "^9.1.4"
+    "inquirer": "^8.0.0"
   }
 }

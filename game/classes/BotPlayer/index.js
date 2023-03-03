@@ -1,6 +1,6 @@
-import Player from '../Player';
+const Player = require('../Player');
 
-export default class BotPlayer extends Player {
+class BotPlayer extends Player {
   constructor(...params) {
     super(...params);
     this.setSelectPosition = BotPlayer.movement;
@@ -27,3 +27,5 @@ export default class BotPlayer extends Player {
     return Math.floor(Math.random() * size);
   }
 }
+
+module.exports = BotPlayer;

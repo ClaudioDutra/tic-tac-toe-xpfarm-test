@@ -1,6 +1,6 @@
-import { statusValues } from './constant';
+const { statusValues } = require('./constant');
 
-export default class Board {
+class Board {
   constructor() {
     this.states = [null, null, null, null, null, null, null, null, null];
   }
@@ -59,10 +59,11 @@ ${formmatedState[6]}|${formmatedState[7]}|${formmatedState[8]}\n
     const { states } = this;
     const winnerPosition = Board.winningPositions.find(
       (position) => states[position[0]] === states[position[1]]
-                    && states[position[1]] === states[position[2]],
+        && states[position[1]] === states[position[2]]
+        && states[position[2]],
     );
 
-    if (!winnerPosition && states.some((value) => value === null) || states.every((value) => value === null)) {
+    if ((!winnerPosition && states.some((value) => value === null)) || states.every((value) => value === null)) {
       return statusValues.nextMove;
     }
 
@@ -77,3 +78,5 @@ ${formmatedState[6]}|${formmatedState[7]}|${formmatedState[8]}\n
     return statusValues.player2;
   }
 }
+
+module.exports = Board

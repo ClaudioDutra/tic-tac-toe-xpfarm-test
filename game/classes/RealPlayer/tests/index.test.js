@@ -1,6 +1,5 @@
-import { jest } from '@jest/globals';
-import RealPlayer from '..';
-import inquirer from 'inquirer';
+const RealPlayer = require('..');
+const inquirer = require('inquirer');
 
 describe('RealPlayer Class', () => {
   test('should have Player properties', () => {
