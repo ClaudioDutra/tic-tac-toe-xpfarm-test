@@ -19,10 +19,9 @@
   - [X] Extends the Player.
   - [X] Get move from input.
   
-- [ ] **Game.**
-  - [ ] Setup the players (if it is a bot or real player).
-  - [ ] setup the board.
-  - [ ] Get each move.
-    - [ ] _Check if someone wins in that move._
-    - [ ] _Inform winner or Tie._
-  - [ ] Ask if the game should start again.
+- [X] **Game.**
+  - [X] setup the board.
+  - [X] Get each move.
+    - [X] _Check if someone wins in that move._
+    - [X] _Inform winner or Tie._
+  - [X] Ask if the game should start again.
