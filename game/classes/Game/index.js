@@ -32,6 +32,7 @@ class Game {
 
       checkResults = this.#board.checkResults();
       if (checkResults === 'P1') {
+        this.#board.render();
         console.log('Player 1 wins!!!!');
         return;
       }
@@ -56,6 +57,7 @@ class Game {
       checkResults = this.#board.checkResults();
 
       if (checkResults === 'P2') {
+        this.#board.render();
         console.log('Player 2 wins!!!!');
         return;
       }
