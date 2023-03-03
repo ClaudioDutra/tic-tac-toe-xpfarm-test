@@ -1,37 +1,34 @@
-const { default: Board } = require("../Board");
+/* eslint-disable no-await-in-loop */
+class Game {
+  #board;
 
-class Game{
-  #board
-  #playerX
-  #playerY
-  constructor({board, playerX, playerY}) {
-    if(!board || !playerX || !playerY) {
+  #playerX;
+
+  #playerY;
+
+  constructor({ board, playerX, playerY }) {
+    if (!board || !playerX || !playerY) {
       throw new Error('Unable to create Game because some parameter are missing');
     }
     this.#board = board;
     this.#playerX = playerX;
     this.#playerY = playerY;
-
   }
 
   async play() {
     console.log('Start your tic tac toe game');
 
-    let isGameDone = false;
-
-    while (!isGameDone) {
-      let currentState = [];
+    while (true) {
+      let currentState = this.#board.state;
       let checkResults = '';
 
       console.log('Current Board:');
       this.#board.render();
 
-      currentState = this.#board.state
-
       console.log('Pick player X move:');
       const playerXMove = await this.#playerX.selectPosition(currentState);
 
-      this.#board.setState = currentState.map((state, position) => position === playerXMove ? 1 : state);
+      this.#board.setState = currentState.map((state, position) => (position === playerXMove ? 1 : state));
 
       checkResults = this.#board.checkResults();
       if (checkResults === 'P1') {
@@ -49,20 +46,19 @@ class Game{
       console.log('Current Board:');
       this.#board.render();
 
-      currentState = this.#board.state
+      currentState = this.#board.state;
 
       console.log('Pick player Y move:');
       const playerYMove = await this.#playerY.selectPosition(currentState);
 
-      this.#board.setState = currentState.map((state, position) => position === playerYMove ? 2 : state);
+      this.#board.setState = currentState.map((state, position) => (position === playerYMove ? 2 : state));
 
-      checkResults = this.#board.checkResults()
+      checkResults = this.#board.checkResults();
 
       if (checkResults === 'P2') {
         console.log('Player 2 wins!!!!');
         return;
       }
-
     }
   }
 }

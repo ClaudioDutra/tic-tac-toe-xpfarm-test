@@ -1,5 +1,5 @@
-const RealPlayer = require('..');
 const inquirer = require('inquirer');
+const RealPlayer = require('..');
 
 describe('RealPlayer Class', () => {
   test('should have Player properties', () => {
@@ -23,8 +23,8 @@ describe('RealPlayer Class', () => {
           expect.objectContaining({ value: 5 }),
           expect.objectContaining({ value: 6 }),
           expect.objectContaining({ value: 7 }),
-          expect.objectContaining({ value: 8 })
-        ])
+          expect.objectContaining({ value: 8 }),
+        ]),
       }));
     });
     test('should show available positions based on state', async () => {
@@ -37,7 +37,7 @@ describe('RealPlayer Class', () => {
           expect.objectContaining({ value: 5 }),
           expect.objectContaining({ value: 6 }),
           expect.objectContaining({ value: 7 }),
-        ])
+        ]),
       }));
     });
     test('should inform no options when no null state available', async () => {
@@ -47,7 +47,7 @@ describe('RealPlayer Class', () => {
     });
 
     test('should return inquire value', async () => {
-      jest.spyOn(inquirer, 'prompt').mockReturnValue({playerMove: 0});
+      jest.spyOn(inquirer, 'prompt').mockReturnValue({ playerMove: 0 });
       expect(RealPlayer.movement([null, 1, 2, 2, 1, null, null, null, 1])).resolves.toBe(0);
     });
   });

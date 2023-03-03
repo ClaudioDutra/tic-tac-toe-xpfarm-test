@@ -1,4 +1,3 @@
-
 const Player = require('..');
 
 describe('Player Class', () => {

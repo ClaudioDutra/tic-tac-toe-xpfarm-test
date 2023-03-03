@@ -1,4 +1,3 @@
-
 const Board = require('..');
 const { statusValues } = require('../constant');
 

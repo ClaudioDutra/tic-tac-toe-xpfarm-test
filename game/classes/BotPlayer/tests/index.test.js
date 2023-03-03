@@ -1,4 +1,3 @@
-
 const BotPlayer = require('..');
 
 describe('BotPlayer Class', () => {
@@ -16,14 +15,14 @@ describe('BotPlayer Class', () => {
     });
     test('should select a valid position when some states are available', () => {
       const statesMock = [null, 1, 2, 1, 2, null, 2, null, 1];
-      const position = BotPlayer.movement(statesMock)
+      const position = BotPlayer.movement(statesMock);
       expect(position).toBeGreaterThanOrEqual(0);
       expect(position).toBeLessThanOrEqual(8);
       expect(statesMock[position]).toBeNull();
     });
     test('should select the last position', () => {
       const statesMock = [1, 1, 2, 1, 2, 1, 2, null, 1];
-      const position = BotPlayer.movement(statesMock)
+      const position = BotPlayer.movement(statesMock);
       expect(position).toBe(7);
     });
     test('should show message when there is no option available', () => {

@@ -7,16 +7,16 @@ class BotPlayer extends Player {
   }
 
   static movement(states = []) {
-    if (states.length && !states.some(state => state === null)) {
+    if (states.length && !states.some((state) => state === null)) {
       console.log('There is no option available');
       return;
     }
 
-    if (!states.length || states.every(state => state === null)) {
+    if (!states.length || states.every((state) => state === null)) {
       return BotPlayer.#getRandomPosition(9);
     }
 
-    const availablePositions = states.map((state, index) => state === null ? index : undefined).filter(state => state);
+    const availablePositions = states.map((state, index) => (state === null ? index : undefined)).filter((state) => state);
 
     const selectedPosition = BotPlayer.#getRandomPosition(availablePositions.length);
 
