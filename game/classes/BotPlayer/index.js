@@ -20,7 +20,7 @@ class BotPlayer extends Player {
 
     const selectedPosition = BotPlayer.#getRandomPosition(availablePositions.length);
 
-    return availablePositions[selectedPosition];
+    return availablePositions[selectedPosition] || 0;
   }
 
   static #getRandomPosition(size) {

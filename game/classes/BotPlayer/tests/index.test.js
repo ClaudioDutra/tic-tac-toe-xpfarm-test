@@ -25,6 +25,11 @@ describe('BotPlayer Class', () => {
       const position = BotPlayer.movement(statesMock);
       expect(position).toBe(7);
     });
+    test('should select the last position when it is the first one', () => {
+      const statesMock = [null, 1, 2, 1, 2, 1, 2, 1, 1];
+      const position = BotPlayer.movement(statesMock);
+      expect(position).toBe(0);
+    });
     test('should show message when there is no option available', () => {
       const consoleSpy = jest.spyOn(console, 'log');
       BotPlayer.movement([1, 1, 2, 2, 1, 2, 1, 2, 1]);
