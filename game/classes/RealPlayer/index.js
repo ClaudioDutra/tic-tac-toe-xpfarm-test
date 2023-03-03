@@ -56,8 +56,12 @@ class RealPlayer extends Player {
     if (!states.length) {
       choices.push(...referenceChoices);
     } else {
-      const nullIndexes = states.map((state, index) => ({ value: state, index })).filter((state) => state);
-      const filteredChoices = referenceChoices.filter((choice) => nullIndexes.find((state) => state.index === choice.value));
+      const nullIndexes = states.map(
+        (state, index) => ({ value: state, index }),
+      ).filter((state) => state);
+      const filteredChoices = referenceChoices.filter(
+        (choice) => nullIndexes.find((state) => !state.value && state.index === choice.value),
+      );
       choices.push(...filteredChoices);
     }
 

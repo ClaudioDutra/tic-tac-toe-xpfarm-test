@@ -33,7 +33,7 @@ describe('RealPlayer Class', () => {
       expect(inquirerMock).toHaveBeenCalledWith(expect.objectContaining({
         type: 'list',
         choices: expect.arrayContaining([
-          expect.objectContaining({ value: 1 }),
+          expect.objectContaining({ value: 0 }),
           expect.objectContaining({ value: 5 }),
           expect.objectContaining({ value: 6 }),
           expect.objectContaining({ value: 7 }),
